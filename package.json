@@ -1,0 +1,50 @@
+{
+  "name": "project-map",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Static semantic project map for React/FSD/Redux codebases",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "project-map": "./dist/cli/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsx src/cli/index.ts",
+    "explorer": "tsx src/cli/index.ts open",
+    "scan": "tsx src/cli/index.ts scan",
+    "build": "tsup",
+    "postbuild": "node scripts/copy-ui.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:smoke": "playwright test"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "@xyflow/react": "^12.10.2",
+    "commander": "^14.0.3",
+    "globby": "^16.1.1",
+    "lucide-react": "^1.16.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "ts-morph": "^27.0.2",
+    "vite": "^8.0.13"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^25.3.5",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

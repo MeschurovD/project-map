@@ -1,0 +1,9 @@
+node_modules
+dist
+.project-map
+coverage
+*.log
+test-results
+playwright-report
+.last-run.json
+.DS_Store
